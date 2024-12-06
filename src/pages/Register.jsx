@@ -39,7 +39,7 @@ function Register() {
             title: "Choose your Avatar",
             description: "Let people identify you by the avatar",
             content: (
-                <div className="space-y-4">
+                <div className="">
                     {/* Default Avatars Section */}
                     <div className="flex space-x-4">
                         <img
@@ -220,8 +220,8 @@ function Register() {
         <div className="flex min-h-screen justify-center items-center bg-gray-100">
             <motion.div
                 key={currentStep}
-                className="sm:w-9/12 lg:w-3/5 bg-white shadow-2xl rounded-lg py-10 px-7 overflow-hidden"
-                custom={direction} // Pass direction to variants
+                className="sm:w-10/12 lg:w-3/5 bg-white shadow-2xl rounded-lg py-10 px-7 overflow-hidden"
+                custom={direction}
                 initial="hidden"
                 animate="visible"
                 exit="exit"

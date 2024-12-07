@@ -32,10 +32,10 @@ function Recents() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col">
+        <div className="min-h-screen flex flex-col">
             <div className="w-4/5 mx-auto flex flex-col lg:flex-row space-y-6 lg:space-y-0 mt-8">
                 {/* Left Column: Call Log List */}
-                <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg h-[85vh] overflow-y-scroll">
+                <div className="w-full lg:w-1/2 bg-white/80  p-6 shadow-lg h-[84vh] overflow-y-scroll">
                     <h2 className="text-3xl font-semibold text-gray-800 mb-6">Recent Calls</h2>
                     <div className="space-y-4">
                         {callLogs.map((call) => (
@@ -67,7 +67,7 @@ function Recents() {
                 </div>
 
                 {/* Right Column: Call Details */}
-                <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg flex items-center justify-center">
+                <div className="w-full lg:w-1/2 bg-white/80 p-6  shadow-lg flex items-center justify-center">
                     {selectedCall ? (
                         <div className="text-center">
                             {/* Avatar */}

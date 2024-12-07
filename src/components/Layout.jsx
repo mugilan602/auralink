@@ -1,18 +1,23 @@
+// Layout.js
 import React from "react";
-import Footer from "./Footer"; // Import Footer component
+import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
     return (
-        <div className="relative flex flex-col min-h-screen">
-            {/* Main Content Area */}
-            <main className="flex-grow pb-16"> {/* Add padding-bottom to make space for the fixed footer */}
-                {children}
-            </main>
-
-            {/* Fixed Footer stays at the bottom */}
-            <Footer />
+        <div
+            className="layout-container"
+            style={{
+                background: "url('/photos/backgrounf.jpg') no-repeat center center fixed",
+                backgroundSize: "cover",
+                minHeight: "100vh", // Ensure the background covers the full screen
+            }}
+        >
+            <div className="main-content">
+                {children} {/* The children will be the page content */}
+            </div>
+            <Footer /> {/* Common footer */}
         </div>
     );
-};
+}
 
 export default Layout;

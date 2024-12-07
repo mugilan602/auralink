@@ -1,7 +1,7 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout"; // Layout to handle background and footer
 import MotionWrapper from "./components/MotionWrapper";
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
@@ -12,72 +12,60 @@ import Speaker from "./pages/Speaker";
 import Contacts from "./pages/Contacts";
 import Footer from "./components/Footer";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Welcome />, // No MotionWrapper for welcome
-    },
-    {
-      path: "/login",
-      element: <Login />, // No MotionWrapper for login
-    },
-    {
-      path: "/register",
-      element: <Register />, // No MotionWrapper for register
-    },
-    {
-      path: "/home",
-      element: (
-        <>
-          <MotionWrapper key="home">
-            <Home />
-          </MotionWrapper>
-          <Footer />
-        </>
-      ),
-    },
-    {
-      path: "/recents",
-      element: (
-        <>
-          <MotionWrapper key="recents">
-            <Recents />
-          </MotionWrapper>
-          <Footer /> {/* Footer remains fixed */}
-        </>
-      ),
-    },
-    {
-      path: "/speaker",
-      element: (
-        <>
-          <MotionWrapper key="speaker">
-            <Speaker />
-          </MotionWrapper>
-          <Footer /> {/* Footer remains fixed */}
-        </>
-      ),
-    },
-    {
-      path: "/contacts",
-      element: (
-        <>
-          <MotionWrapper key="contacts">
-            <Contacts />
-          </MotionWrapper>
-          <Footer /> {/* Footer remains fixed */}
-        </>
-      ),
-    },
-  ],
+const router = createBrowserRouter([
   {
-    future: {
-      v7_relativeSplatPath: true,
-      v7_startTransition: true,
-    },
-  }
-);
+    path: "/",
+    element: <Welcome />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/home",
+    element: (
+      <Layout>
+        <MotionWrapper key="home">
+          <Home />
+        </MotionWrapper>
+      </Layout>
+    ),
+  },
+  {
+    path: "/recents",
+    element: (
+      <Layout>
+        <MotionWrapper key="recents">
+          <Recents />
+        </MotionWrapper>
+      </Layout>
+    ),
+  },
+  {
+    path: "/speaker",
+    element: (
+      <Layout>
+        <MotionWrapper key="speaker">
+          <Speaker />
+        </MotionWrapper>
+      </Layout>
+    ),
+  },
+  {
+    path: "/contacts",
+    element: (
+      <Layout>
+        <MotionWrapper key="contacts">
+          <Contacts />
+        </MotionWrapper>
+      </Layout>
+    ),
+  },
+]);
 
 function App() {
   return (
